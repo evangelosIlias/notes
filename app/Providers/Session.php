@@ -1,6 +1,6 @@
 <?php
 
-namespace classes;
+namespace App\Providers;
 
 class Session
 {
@@ -35,16 +35,13 @@ class Session
             $params['httponly']
         );
 
-        // Add SameSite=None attribute to the correct cookie name
         setcookie(session_name(), session_id(), [
             'expires' => 0,
             'path' => '/',
             'domain' => '',
-            'secure' => true,  // Set to true if using HTTPS
+            'secure' => true,
             'httponly' => true,
             'samesite' => 'None',
         ]);
     }
-
-
 }

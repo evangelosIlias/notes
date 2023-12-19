@@ -2,9 +2,9 @@
 
 session_start();
 
-use classes\Container;
+use App\Providers\Container;
 use database\Database;
-use classes\App;
+use App\Providers\App;
 
 $container = new Container();
 

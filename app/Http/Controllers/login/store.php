@@ -2,10 +2,10 @@
 
 use function functions\main\view;
 use function functions\main\dd;
-use classes\App;
+use App\Providers\App;
 use database\Database;
-use classes\Session;
-use classes\Validator;
+use App\Providers\Session;
+use App\Services\Validator;
 
 $db = App::resolve(Database::class);
 

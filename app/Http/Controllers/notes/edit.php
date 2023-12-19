@@ -2,7 +2,7 @@
 
 use function functions\main\view;
 use function functions\main\authorize;
-use classes\App;
+use App\Providers\App;
 use database\Database;
 
 $db = App::resolve(Database::class);

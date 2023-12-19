@@ -2,7 +2,7 @@
 
 use function functions\main\urlIs;
 use function functions\main\dd;
-use classes\Session;
+use App\Providers\Session;
 
 $session = Session::resolve();
 ?>
@@ -19,7 +19,9 @@ $session = Session::resolve();
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/" class="<?= urlIs("/") ?>text-gray-300 text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
               <a href="/about" class="<?= urlIs("/about") ?>text-gray-300 text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-              <a href="/notes" class="<?= urlIs("/notes") ?>text-gray-300 text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Notes</a>
+              <?php if ($_SESSION['user'] ?? false): ?>
+                <a href="/notes" class="<?= urlIs("/notes") ?>text-gray-300 text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Notes</a>
+              <?php endif; ?>
               <a href="/contact" class="<?= urlIs("/contact") ?>text-gray-300 text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
             </div>
           </div>

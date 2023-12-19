@@ -2,10 +2,10 @@
 
 use function functions\main\view;
 use function functions\main\dd;
-use classes\Validator;
-use classes\App;
+use App\Services\Validator;
+use App\Providers\App;
 use database\Database;
-use classes\Session;
+use App\Providers\Session;
 
 $username = $_POST['username'];
 $email = $_POST['email'];
@@ -50,5 +50,3 @@ if ($user) {
     header("Location: /");
     exit();
 }
-
-

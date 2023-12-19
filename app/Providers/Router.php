@@ -1,10 +1,10 @@
 <?php 
 
-namespace classes;
+namespace App\Providers;
 
 use function functions\main\base_path;
 use function functions\main\dd;
-use classes\Middleware\Middleware;
+use App\Http\Middleware\Middleware;
 
 class Router
 {   
@@ -60,7 +60,7 @@ class Router
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 Middleware::resolve($route['middleware']);
 
-                return require base_path($route['controller']);
+                return require base_path('App/Http/Controllers/' . $route['controller']);
             }
         }
         $this->abort();

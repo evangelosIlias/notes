@@ -1,6 +1,6 @@
 <?php
 
-use classes\Session;
+use App\Providers\Session;
 
 Session::destroy();
 

@@ -14,7 +14,7 @@ spl_autoload_register(function ($class)
 
 require base_path('bootstrap.php');
 
-$router = new \classes\Router();
+$router = new \App\Providers\Router();
 
 $routes = require base_path("routes/web.php");
 

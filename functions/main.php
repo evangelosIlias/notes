@@ -1,7 +1,7 @@
 <?php
 
 namespace functions\main;
-use classes\Response;
+use App\Providers\Response;
 
 function urlIS($value)
 {
