@@ -1,50 +1,48 @@
 <?php
 
 use function functions\main\view;
-use function functions\main\dd;
 use App\Providers\App;
 use database\Database;
 use App\Providers\Session;
-use App\Services\Validator;
+use App\Http\Forms\LoginForm;
 
 $db = App::resolve(Database::class);
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$errors = [];
+$form = new LoginForm();
 
-if (! Validator::email($email)) {
-    $errors['email'] = "Please proivde a valid email address";
-}
-
-if (! Validator::string($password)) {
-    $errors['password'] = "Please provide a valid password";
-}
-
-if (! empty($errors)) {
+// Validate the form
+if (! $form->validate($email, $password)) {
     return view("login/create.view.php", [
         'heading' => "Login Page",
-        'errors' => $errors,
+        'errors' => $form->errors(),
     ]);
 }
 
-$user = $db->query("SELECT * FROM users where email = :email", [
+// Find the user
+$user = $db->query("SELECT * FROM users WHERE email = :email", [
     'email' => $email,
 ])->find();
 
 if ($user) {
-    if (password_verify($password, $user['password'])) {
+   if (password_verify($password, $user['password'])) {
+        // Start session
         Session::bind($user['username'], $email);
 
         header("Location: /");
-        exit(); 
-    }  
+        exit();
+   };  
 }
 
 return view("login/create.view.php", [
     'heading' => "Login Page",
-    'errors' =>[
-        'email' => 'No matching account found for that email address and password',
+    'errors' => [
+        'password' => "Incorrect password or email",
     ],
 ]);
+
+
+
+
