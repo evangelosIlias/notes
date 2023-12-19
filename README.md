@@ -1,13 +1,9 @@
 # Project Title
 
-A note project with loging and register system to keep your notes
-
-## Description
-
-Based on PHP is a note project provide 
+A note project with a login and register system to keep your notes
 
 ## Usage
 
-Is open project feel free to download and have amendments based on requirements
+Is an open project feel free to download it and make amendments based on the requirements
 
 
