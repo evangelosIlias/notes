@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 use App\Providers\Container;
 use database\Database;
 use App\Providers\App;

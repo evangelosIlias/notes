@@ -3,8 +3,6 @@
 use function functions\main\urlIs;
 use function functions\main\dd;
 use App\Providers\Session;
-
-$session = Session::resolve();
 ?>
 
 <nav class="bg-gray-800">
@@ -19,7 +17,7 @@ $session = Session::resolve();
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/" class="<?= urlIs("/") ?>text-gray-300 text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
               <a href="/about" class="<?= urlIs("/about") ?>text-gray-300 text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-              <?php if ($_SESSION['user'] ?? false): ?>
+              <?php if (Session::resolve('username') ?? false): ?>
                 <a href="/notes" class="<?= urlIs("/notes") ?>text-gray-300 text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Notes</a>
               <?php endif; ?>
               <a href="/contact" class="<?= urlIs("/contact") ?>text-gray-300 text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
@@ -42,9 +40,9 @@ $session = Session::resolve();
                 <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                 </button>
-                <?php if (isset($session['username'])) : ?>
+                <?php if (Session::resolve('username')) : ?>
                   <div class="text-white">
-                      <?= $session['username']; ?>
+                      <?= Session::resolve('username') ?>
                   </div>
               <?php else: ?>
                   <a href="/login" class="<?= urlIs("/login") ?>text-gray-300 text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
@@ -53,7 +51,7 @@ $session = Session::resolve();
             </div>
           </div>
           
-          <?php if (isset($session['username'])) : ?>
+          <?php if (Session::resolve('username')) : ?>
           <div class="ml-3">
             <form action="/logout" method="POST">
               <input type="hidden" name="_method" value="DELETE">

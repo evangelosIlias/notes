@@ -1,48 +1,32 @@
 <?php
 
-use function functions\main\view;
-use App\Providers\App;
-use database\Database;
 use App\Providers\Session;
+use App\Providers\Redirect;
 use App\Http\Forms\LoginForm;
-
-$db = App::resolve(Database::class);
+use App\Services\Authenticator;
+use function functions\main\view;
 
 $email = $_POST['email'];
+$username = $_POST['username'];
 $password = $_POST['password'];
 
-$form = new LoginForm();
+$form = new LoginForm(); 
+$path = new Redirect();
 
 // Validate the form
-if (! $form->validate($email, $password)) {
-    return view("login/create.view.php", [
-        'heading' => "Login Page",
-        'errors' => $form->errors(),
-    ]);
+if ($form->validate($email, $password)) {
+    if ((new Authenticator)->attempt($email, $password)) {
+        $path->redirect("/");
+    } 
+    
+    $form->error('email', "No matching account found for that email address and password.");
 }
 
-// Find the user
-$user = $db->query("SELECT * FROM users WHERE email = :email", [
-    'email' => $email,
-])->find();
+Session::flash('errors', $form->errors());
 
-if ($user) {
-   if (password_verify($password, $user['password'])) {
-        // Start session
-        Session::bind($user['username'], $email);
+return $path->redirect("/login");
 
-        header("Location: /");
-        exit();
-   };  
-}
-
-return view("login/create.view.php", [
-    'heading' => "Login Page",
-    'errors' => [
-        'password' => "Incorrect password or email",
-    ],
-]);
-
-
-
-
+// return view("login/create.view.php", [
+//     'heading' => "Login Page",
+//     'errors' => $form->errors(),
+// ]);

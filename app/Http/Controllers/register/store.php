@@ -45,7 +45,7 @@ if ($user) {
         'password' => password_hash($password, PASSWORD_BCRYPT),
     ]);
 
-    Session::bind($username, $email);
+    Session::check($username, $email);
 
     header("Location: /");
     exit();
