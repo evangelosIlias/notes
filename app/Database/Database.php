@@ -4,7 +4,7 @@
  * Connect to Database
  */
 
-namespace database;
+namespace App\Database;
 use PDO;
 use PDOException;
 use function functions\main\abort;

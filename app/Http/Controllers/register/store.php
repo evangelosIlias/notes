@@ -4,7 +4,7 @@ use function functions\main\view;
 use function functions\main\dd;
 use App\Services\Validator;
 use App\Providers\App;
-use database\Database;
+use App\Database\Database;
 use App\Providers\Session;
 
 $username = $_POST['username'];

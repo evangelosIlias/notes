@@ -2,7 +2,7 @@
 
 namespace App\Services;
 use App\Providers\App;
-use database\Database;
+use App\Database\Database;
 use App\Providers\Session;
 
 class Authenticator

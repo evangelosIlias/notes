@@ -1,8 +1,8 @@
 <?php
 
-use App\Providers\Container;
-use database\Database;
 use App\Providers\App;
+use App\Database\Database;
+use App\Providers\Container;
 
 $container = new Container();
 

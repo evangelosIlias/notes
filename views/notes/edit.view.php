@@ -4,7 +4,6 @@ use function functions\main\base_path;
 require base_path('views/partials/_head.php'); 
 require base_path('views/partials/_nav.php');
 require base_path('views/partials/_banner.php')
-
 ?>
 
 <main>

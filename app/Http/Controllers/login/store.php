@@ -1,32 +1,19 @@
 <?php
 
-use App\Providers\Session;
 use App\Providers\Redirect;
 use App\Http\Forms\LoginForm;
 use App\Services\Authenticator;
-use function functions\main\view;
 
-$email = $_POST['email'];
-$username = $_POST['username'];
-$password = $_POST['password'];
+$form = LoginForm::validate($attributes = [
+    'email' => $_POST['email'],
+    'password' => $_POST['password'],
+]);
 
-$form = new LoginForm(); 
-$path = new Redirect();
-
-// Validate the form
-if ($form->validate($email, $password)) {
-    if ((new Authenticator)->attempt($email, $password)) {
-        $path->redirect("/");
-    } 
+$singedIn = (new Authenticator)->attempt($attributes['email'], $attributes['password']);
     
-    $form->error('email', "No matching account found for that email address and password.");
-}
+if (! $singedIn) {
+    $form->error('email', "No matching account found for that email address and password.")
+    ->throw();   
+} 
 
-Session::flash('errors', $form->errors());
-
-return $path->redirect("/login");
-
-// return view("login/create.view.php", [
-//     'heading' => "Login Page",
-//     'errors' => $form->errors(),
-// ]);
+Redirect::redirect("/");

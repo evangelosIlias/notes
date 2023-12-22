@@ -1,0 +1,25 @@
+{
+    "name": "natalisuportman/demo",
+    "authors": [
+        {
+            "name": "evangelosIlias",
+            "email": "evangelos.ilias87@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/collections": "^10.38"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\" : "App/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.28"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

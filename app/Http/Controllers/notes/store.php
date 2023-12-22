@@ -3,7 +3,7 @@
 use function functions\main\view;
 use App\Services\Validator;
 use App\Providers\App;
-use database\Database;
+use App\Database\Database;
 
 $db = App::resolve(Database::class);
 
