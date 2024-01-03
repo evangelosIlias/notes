@@ -2,7 +2,8 @@
 ## Project Overview
 
 The Note Project is a PHP-based web application following the MVC pattern and utilizing Object-Oriented Programming (OOP) principles. It includes a secure login and register system, allowing users to manage their notes. The project implements features such as creating, deleting, and viewing notes. Autoloading and Composer are integrated into the project for efficient dependency management.
-Features
+
+## Features
 
   - MVC pattern for a structured and maintainable codebase.
   - Secure login and register system for user authentication.
@@ -10,22 +11,21 @@ Features
   - Autoloading and Composer for efficient dependency management.
   - Pest test for ensuring code reliability.
 
-Prerequisites
 
-Before you begin, ensure you have the following installed:
+## Before you begin, ensure you have the following installed:
 
 -  Web server (e.g., Apache, Nginx)
 -  PHP (version 7 or higher)
 
-Installation
+## Installation
 
     git clone https://github.com/your-username/note-project.git
 
-Navigate to the project directory:
+## Navigate to the project directory:
 
     cd note-project
 
-Run Pest tests:
+## Run Pest tests:
 
     ./vendor/bin/pest
     
