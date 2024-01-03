@@ -41,7 +41,7 @@ Run Pest tests:
 
 Usage
 
-Accessing the Project:
+# Accessing the Project:
 
   - Navigate to the project using your web browser.
 
@@ -50,13 +50,9 @@ Accessing the Project:
       - Log in using your credentials.
       - Create, view, update, and delete notes.
 
-Project Customization:
-
-  - Feel free to download the project and make any amendments based on your requirements.
-
 ## Customization
 
-Feel free to customize this project.
+  - Feel free to download the project and make any amendments based on your requirements.
 
 ## License
 
