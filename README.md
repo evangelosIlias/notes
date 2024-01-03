@@ -41,7 +41,7 @@ Run Pest tests:
 
 Usage
 
-# Accessing the Project:
+## Accessing the Project:
 
   - Navigate to the project using your web browser.
 
