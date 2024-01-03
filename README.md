@@ -14,8 +14,8 @@ Prerequisites
 
 Before you begin, ensure you have the following installed:
 
-    Web server (e.g., Apache, Nginx)
-    PHP (version 7 or higher)
+-  Web server (e.g., Apache, Nginx)
+-  PHP (version 7 or higher)
 
 Installation
 
