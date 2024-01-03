@@ -43,16 +43,16 @@ Usage
 
 Accessing the Project:
 
-Navigate to the project using your web browser.
+  - Navigate to the project using your web browser.
 
-User Actions:
-    Register for an account to create a user profile.
-    Log in using your credentials.
-    Create, view, update, and delete notes.
+  - User Actions:
+      - Register for an account to create a user profile.
+      - Log in using your credentials.
+      - Create, view, update, and delete notes.
 
 Project Customization:
 
-Feel free to download the project and make any amendments based on your requirements.
+  - Feel free to download the project and make any amendments based on your requirements.
 
 Contributing
 
