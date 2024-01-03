@@ -54,11 +54,12 @@ Project Customization:
 
   - Feel free to download the project and make any amendments based on your requirements.
 
-Contributing
+## Customization
 
-Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
-License
+Feel free to customize this project.
 
-This project is open-source and available under the MIT License. Feel free to use and modify it as needed.
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 
