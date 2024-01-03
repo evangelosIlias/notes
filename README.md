@@ -12,20 +12,20 @@ The Note Project is a PHP-based web application following the MVC pattern and ut
   - Pest test for ensuring code reliability.
 
 
-## Before you begin, ensure you have the following installed:
+Before you begin, ensure you have the following installed
 
 -  Web server (e.g., Apache, Nginx)
 -  PHP (version 7 or higher)
 
-## Installation
+Installation
 
     git clone https://github.com/your-username/note-project.git
 
-## Navigate to the project directory:
+Navigate to the project directory
 
     cd note-project
 
-## Run Pest tests:
+Run Pest tests:
 
     ./vendor/bin/pest
     
